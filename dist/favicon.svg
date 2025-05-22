@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular -->
+  <circle cx="256" cy="256" r="256" fill="#f06292" />
+  
+  <!-- Iniciales estilizadas de Dra. Jazmín Montañés -->
+  <text x="256" y="300" font-family="Arial, sans-serif" font-size="220" text-anchor="middle" fill="white" font-weight="bold">J</text>
+  
+  <!-- Símbolo médico minimalista -->
+  <path d="M256 140 L256 372 M170 256 L342 256" stroke="white" stroke-width="25" stroke-linecap="round" />
+</svg>
