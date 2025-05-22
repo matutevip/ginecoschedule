@@ -1,0 +1,69 @@
+Solución propuesta
+🔹 1. Asegurar que el formulario no sobrescriba selectedTime al abrir el diálogo
+Modifica el useEffect de showNewAppointment para que solo inicialice el formulario si selectedTime es null.
+
+tsx
+Copy
+Edit
+useEffect(() => {
+  if (showNewAppointment) {
+    if (!selectedDate || (!selectedTime && viewMode !== "calendar")) {
+      const newDate = viewMode === "calendar" && selectedDate ? selectedDate : new Date();
+      let appointmentDateTime = new Date(newDate);
+
+      if (selectedTime && viewMode === "calendar") {
+        const [hoursPart, minutesPart] = selectedTime.split(":");
+        const hours = parseInt(hoursPart, 10);
+        const minutes = parseInt(minutesPart, 10);
+
+        if (!isNaN(hours) && !isNaN(minutes)) {
+          appointmentDateTime.setHours(hours, minutes, 0, 0);
+        }
+      }
+
+      form.reset({
+        patientName: "",
+        email: "",
+        phone: "",
+        serviceType: "Consulta",
+        obraSocial: "Particular",
+        isFirstTime: false,
+        notes: "",
+        appointmentTime: appointmentDateTime,
+      });
+
+      form.setValue("appointmentTime", appointmentDateTime, {
+        shouldValidate: true,
+        shouldDirty: true,
+        shouldTouch: true,
+      });
+
+      if (viewMode !== "calendar") {
+        setSelectedDate(null);
+        setSelectedTime(null);
+      }
+    }
+  }
+}, [showNewAppointment, form, viewMode, selectedDate, selectedTime]);
+✅ Esto evita que el formulario sobrescriba el slot seleccionado manualmente.
+
+🔹 2. Retrasar la apertura del modal hasta que selectedTime se actualice completamente
+En onClick de los slots en el calendario, cambia la lógica para asegurarte de que selectedTime ya tiene valor antes de abrir el modal.
+
+tsx
+Copy
+Edit
+onClick={() => {
+  setSelectedDate(day);
+  setSelectedTime(formattedTime);
+  handleSlotSelect(formattedTime);
+
+  // Asegurar que React actualice `selectedTime` antes de abrir el modal
+  setTimeout(() => {
+    if (selectedTime) {
+      setShowNewAppointment(true);
+    }
+  }, 50);
+}}
+✅ Esto ayuda a que selectedTime esté correctamente definido antes de abrir el modal.
+

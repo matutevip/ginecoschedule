@@ -1,0 +1,55 @@
+client:495 [vite] connecting...
+client:614 [vite] connected.
+chunk-RPCDYKBN.js?v=2e4e3f54:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+App.tsx:25 Detección de subdominio admin - Hostname: 12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev
+App.tsx:29 Hostname comienza con "admin.": NO
+App.tsx:34 Parámetro admin en URL: NO
+apiClient.ts:58 Error en solicitud API a /api/admin/appointments/today: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+apiClient @ apiClient.ts:58
+admin.tsx:428 Uncaught ReferenceError: TimeBlockCalendar is not defined
+    at Admin (admin.tsx:428:16)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=2e4e3f54:11548:26)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=2e4e3f54:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=2e4e3f54:15924:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=2e4e3f54:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=2e4e3f54:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=2e4e3f54:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=2e4e3f54:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=2e4e3f54:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=2e4e3f54:19137:13)
+admin.tsx:428 Uncaught ReferenceError: TimeBlockCalendar is not defined
+    at Admin (admin.tsx:428:16)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=2e4e3f54:11548:26)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=2e4e3f54:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=2e4e3f54:15924:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=2e4e3f54:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=2e4e3f54:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=2e4e3f54:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=2e4e3f54:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=2e4e3f54:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=2e4e3f54:19137:13)
+chunk-RPCDYKBN.js?v=2e4e3f54:14032 The above error occurred in the <Admin> component:
+
+    at Admin (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/pages/admin.tsx?t=1747860233701:57:25)
+    at Route (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=2e4e3f54:323:16)
+    at Switch (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=2e4e3f54:379:17)
+    at Router (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/App.tsx?t=1747860233701&v=oox-Las-OPnDfFGzem9Qb:50:35)
+    at Provider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-R2T6YHTW.js?v=2e4e3f54:43:15)
+    at TooltipProvider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=2e4e3f54:61:5)
+    at QueryClientProvider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=2e4e3f54:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-RPCDYKBN.js?v=2e4e3f54:14032
+chunk-RPCDYKBN.js?v=2e4e3f54:9129 Uncaught ReferenceError: TimeBlockCalendar is not defined
+    at Admin (admin.tsx:428:16)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=2e4e3f54:11548:26)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=2e4e3f54:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=2e4e3f54:15924:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=2e4e3f54:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=2e4e3f54:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=2e4e3f54:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=2e4e3f54:19116:15)
+    at recoverFromConcurrentError (chunk-RPCDYKBN.js?v=2e4e3f54:18736:28)
+    at performSyncWorkOnRoot (chunk-RPCDYKBN.js?v=2e4e3f54:18879:28)

@@ -1,0 +1,92 @@
+Analicé a fondo el código y encontré la raíz del bug crítico que mencionaste: cuando la doctora hace clic en un slot del calendario, el formulario de turno se abre, pero el horario cargado es incorrecto (muestra el primer slot disponible y no el seleccionado).
+
+🧠 Diagnóstico: ¿qué está pasando?
+En tu vista de calendario (viewMode === "calendar"), cuando la doctora hace clic en un slot disponible, se dispara este bloque:
+
+tsx
+Copy
+Edit
+onClick={() => {
+  if (isAvailable) {
+    const appointmentDateTime = new Date(year, month, date, slot.hour, slot.minute, 0, 0);
+    const formattedTimeStr = `${slot.hour.toString().padStart(2, '0')}:${slot.minute === 0 ? '00' : slot.minute}`;
+    
+    setSelectedDate(new Date(year, month, date));
+    setSelectedTime(formattedTimeStr);
+
+    form.reset({ ...appointmentDefaultValues, appointmentTime: appointmentDateTime });
+
+    setTimeout(() => {
+      form.setValue("appointmentTime", appointmentDateTime, { ... });
+    }, 50);
+
+    setShowNewAppointment(true);
+  }
+}}
+🟡 El problema no es esta lógica en sí misma, sino que el useEffect que escucha showNewAppointment se vuelve a ejecutar, y prioriza selectedSlot por sobre selectedDate y selectedTime, lo que causa que el horario mostrado en el formulario sea otro.
+
+✅ Solución recomendada
+Paso 1: usar siempre handleSlotSelect(...) al hacer clic en un slot
+Tu función handleSlotSelect() ya crea un objeto selectedSlot con toda la info correcta. Pero en esta parte del código, estás haciendo el form reset a mano. Dejá que handleSlotSelect() lo maneje.
+
+➡️ Reemplazá el bloque onClick del slot por esto:
+
+tsx
+Copy
+Edit
+onClick={() => {
+  if (isAvailable) {
+    const timeStr = `${slot.hour.toString().padStart(2, '0')}:${slot.minute === 0 ? '00' : slot.minute}`;
+    handleSlotSelect(timeStr, true, new Date(day)); // Usamos true para que abra el form
+  }
+}}
+Esto:
+
+Centraliza la lógica.
+
+Usa selectedSlot correctamente.
+
+Evita duplicar el setSelectedDate, setSelectedTime, form.reset, etc.
+
+Paso 2: en el useEffect de showNewAppointment, dale prioridad al selectedSlot.
+Tu código ya lo hace, pero asegurate de que form.reset solo se llama una vez, y que los datos no están siendo sobreescritos por selectedDate + selectedTime.
+
+⚠️ Revisión clave: si usás handleSlotSelect(...), no necesitás volver a setear nada en el useEffect.
+
+Podés simplificar ese useEffect así:
+
+ts
+Copy
+Edit
+useEffect(() => {
+  if (showNewAppointment && selectedSlot?.fullDateTime) {
+    console.log("Resetting form with selected slot:", selectedSlot);
+
+    const appointmentDateTime = new Date(selectedSlot.fullDateTime);
+
+    form.reset({
+      patientName: "",
+      email: "",
+      phone: "",
+      serviceType: "Consulta",
+      obraSocial: "Particular",
+      isFirstTime: false,
+      notes: "",
+      appointmentTime: appointmentDateTime,
+    });
+
+    form.setValue("appointmentTime", appointmentDateTime, {
+      shouldValidate: true,
+      shouldDirty: true,
+      shouldTouch: true
+    });
+  }
+}, [showNewAppointment, selectedSlot, form]);
+✅ Resultado
+Con estas dos correcciones:
+
+Se asegura que siempre que se hace clic en un slot, se usa handleSlotSelect(...) con el horario y fecha exactos.
+
+El formulario se abre con exactamente ese horario, sin que otro efecto lo sobreescriba con el primer slot disponible.
+
+Se elimina código duplicado y se centraliza el manejo.

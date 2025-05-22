@@ -1,0 +1,24 @@
+lockdown-install.js:1 Removing unpermitted intrinsics
+client:495 [vite] connecting...
+client:614 [vite] connected.
+chunk-RPCDYKBN.js?v=8606a715:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+booking-form.tsx:117 Fetching schedule config in booking form
+booking-form.tsx:127 Retrieved schedule config: ObjectcreatedAt: "2025-02-18T23:18:47.199Z"endTime: "12:00:00"id: 1startTime: "09:00:00"updatedAt: "2025-03-07T20:23:05.749Z"vacationPeriods: [{…}]workDays: (2) ['miercoles', 'miercoles'][[Prototype]]: Object
+booking-form.tsx:225 Availability data: Objectdate: "2025-05-28"timeSlots: (6) [{…}, {…}, {…}, {…}, {…}, {…}][[Prototype]]: Object
+booking-form.tsx:360 Time slot selection: ObjectappointmentDate: "2025-05-28T13:30:00.000Z"buenosAiresDate: "2025-05-28T13:30:00.000Z"selectedDate: "2025-05-28T21:34:25.712Z"slotTime: "10:30"[[Prototype]]: Object
+booking-form.tsx:142 Submitting appointment: ObjectappointmentDate: "2025-05-28T13:30:00.000Z"originalTime: "2025-05-28T13:30:00.000Z"[[Prototype]]: Object
+booking-form.tsx:225 Availability data: Objectdate: "2025-05-28"timeSlots: (6) [{…}, {…}, {…}, {…}, {…}, {…}][[Prototype]]: Object
+booking-form.tsx:360 Time slot selection: ObjectappointmentDate: "2025-05-28T14:30:00.000Z"buenosAiresDate: "2025-05-28T14:30:00.000Z"selectedDate: "2025-05-28T21:34:51.358Z"slotTime: "11:30"[[Prototype]]: Object
+booking-form.tsx:142 Submitting appointment: ObjectappointmentDate: "2025-05-28T14:30:00.000Z"originalTime: "2025-05-28T14:30:00.000Z"[[Prototype]]: Object
+/api/appointments:1 
+            
+            
+           Failed to load resource: the server responded with a status of 400 (Bad Request)
+booking-form.tsx:225 Availability data: Objectdate: "2025-06-04"timeSlots: (6) [{…}, {…}, {…}, {…}, {…}, {…}][[Prototype]]: Object
+booking-form.tsx:225 Availability data: Objectdate: "2025-06-04"timeSlots: (6) [{…}, {…}, {…}, {…}, {…}, {…}][[Prototype]]: Object
+booking-form.tsx:360 Time slot selection: ObjectappointmentDate: "2025-06-04T12:00:00.000Z"buenosAiresDate: "2025-06-04T12:00:00.000Z"selectedDate: "2025-06-04T21:35:39.999Z"slotTime: "09:00"[[Prototype]]: Object
+booking-form.tsx:142 Submitting appointment: ObjectappointmentDate: "2025-06-04T12:00:00.000Z"originalTime: "2025-06-04T12:00:00.000Z"[[Prototype]]: Object
+/api/appointments:1 
+            
+            
+           Failed to load resource: the server responded with a status of 400 (Bad Request)

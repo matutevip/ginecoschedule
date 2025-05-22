@@ -1,0 +1,72 @@
+Solución definitiva para evitar la sobrescritura de selectedTime
+🔹 1. Modificar el useEffect de inicialización del formulario
+Actualmente, el useEffect sigue ejecutándose cuando showNewAppointment es true, lo que ocasiona que el formulario cargue una hora incorrecta.
+
+Cambia la condición para que el formulario solo se inicialice si selectedTime es null.
+
+tsx
+Copy
+Edit
+useEffect(() => {
+  if (showNewAppointment) {
+    if (!selectedDate || (!selectedTime && viewMode !== "calendar")) {
+      const newDate = viewMode === "calendar" && selectedDate ? selectedDate : new Date();
+      let appointmentDateTime = new Date(newDate);
+
+      if (selectedTime && viewMode === "calendar") {
+        const [hoursPart, minutesPart] = selectedTime.split(":");
+        const hours = parseInt(hoursPart, 10);
+        const minutes = parseInt(minutesPart, 10);
+
+        if (!isNaN(hours) && !isNaN(minutes)) {
+          appointmentDateTime.setHours(hours, minutes, 0, 0);
+        }
+      }
+
+      form.reset({
+        patientName: "",
+        email: "",
+        phone: "",
+        serviceType: "Consulta",
+        obraSocial: "Particular",
+        isFirstTime: false,
+        notes: "",
+        appointmentTime: appointmentDateTime,
+      });
+
+      form.setValue("appointmentTime", appointmentDateTime, {
+        shouldValidate: true,
+        shouldDirty: true,
+        shouldTouch: true,
+      });
+
+      if (viewMode !== "calendar") {
+        setSelectedDate(null);
+        setSelectedTime(null);
+      }
+    }
+  }
+}, [showNewAppointment, form, viewMode, selectedDate, selectedTime]);
+✅ Esto evita que el formulario sobrescriba la hora seleccionada manualmente.
+
+🔹 2. Retrasar la apertura del modal hasta que selectedTime se actualice correctamente React actualiza el estado de forma asincrónica, por lo que setShowNewAppointment(true) se ejecuta antes de que selectedTime haya cambiado completamente.
+
+Modifica el evento onClick en los slots del calendario para asegurarte de que selectedTime esté correctamente actualizado antes de abrir el modal:
+
+tsx
+Copy
+Edit
+onClick={() => {
+  setSelectedDate(day);
+  setSelectedTime(formattedTime);
+  handleSlotSelect(formattedTime);
+
+  // Esperar a que React actualice `selectedTime` antes de abrir el modal
+  setTimeout(() => {
+    if (selectedTime) {
+      setShowNewAppointment(true);
+    }
+  }, 50);
+}}
+✅ Esto previene que el modal se abra antes de que selectedTime se actualice correctamente.
+

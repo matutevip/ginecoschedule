@@ -1,0 +1,28 @@
+handleFieldChange called for field: serviceType, value: Terapia de Ginecología Regenerativa, currentStep: 3
+booking-form.tsx:264 Cambió el tipo de servicio a: Terapia de Ginecología Regenerativa
+booking-form.tsx:268 Actualizando disponibilidad con el nuevo tipo de servicio
+booking-form.tsx:398 Checking service info: serviceType=Terapia de Ginecología Regenerativa, obraSocial=undefined, appointmentTime=present
+booking-form.tsx:399 Errors: {}
+booking-form.tsx:250 Availability data: Object
+4booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:250 Availability data: Objectdate: "2025-05-07"timeSlots: Array(9)0: {time: '09:00', available: false}1: {time: '09:20', available: false}2: {time: '09:40', available: false}3: {time: '10:00', available: false}4: {time: '10:20', available: false}5: {time: '10:40', available: false}6: {time: '11:00', available: false}7: {time: '11:20', available: false}8: {time: '11:40', available: false}length: 9[[Prototype]]: Array(0)[[Prototype]]: Object
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 0 disponibles
+booking-form.tsx:361 handleFieldChange called for field: obraSocial, value: Particular, currentStep: 3
+booking-form.tsx:366 appointmentTime no está presente, usando el selectedTime si está disponible
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 0 disponibles
+booking-form.tsx:398 Checking service info: serviceType=Terapia de Ginecología Regenerativa, obraSocial=Particular, appointmentTime=missing
+booking-form.tsx:399 Errors: {}
+2booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 0 disponibles
+booking-form.tsx:250 Availability data: {date: '2025-04-23', timeSlots: Array(9)}
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:453 Time slot selection: {slotTime: '11:40', selectedDate: '2025-04-23T23:24:23.627Z', appointmentDate: '2025-04-23T14:40:00.000Z', buenosAiresDate: '2025-04-23T14:40:00.000Z'}
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:361 handleFieldChange called for field: obraSocial, value: IOMA, currentStep: 3
+booking-form.tsx:845 Advancing to step 4 after selecting obra social
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:420 Mostrando slots disponibles según el backend (sin filtros adicionales): 1 disponibles
+booking-form.tsx:398 Checking service info: serviceType=Terapia de Ginecología Regenerativa, obraSocial=IOMA, appointmentTime=present

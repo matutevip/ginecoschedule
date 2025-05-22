@@ -1,0 +1,89 @@
+El problema principal es que al abrir el formulario, el campo de hora no se completa con la hora del slot clickeado, sino con la del primer slot disponible.
+
+Posible Causa y Solución General:
+
+La causa más probable es que al abrir el formulario, la lógica para determinar la hora inicial del campo appointmentTime esté buscando el primer slot disponible en lugar de utilizar la información del slot que se acaba de clickear.
+
+Aquí te presento una solución general que deberías adaptar a tu código específico:
+
+Almacena la información del slot clickeado: Cuando el usuario haga clic en un slot del calendario, necesitas capturar la fecha y hora exactas de ese slot y almacenarlas en una variable de estado (state) de tu componente.
+
+TypeScript
+
+import { useState } from "react";
+// ... otros imports
+
+const [isDialogOpen, setIsDialogOpen] = useState(false);
+const [clickedSlotTime, setClickedSlotTime] = useState<Date | null>(null);
+
+const handleSlotClick = (date: Date, hour: number, minute: number) => {
+  const clickedDateTime = new Date(date);
+  clickedDateTime.setHours(hour);
+  clickedDateTime.setMinutes(minute);
+  setClickedSlotTime(clickedDateTime);
+  setIsDialogOpen(true);
+};
+
+// ... (tu lógica para renderizar el calendario y los slots, donde llamas a handleSlotClick)
+Utiliza la información almacenada para inicializar el formulario: Cuando se abra el Dialog del formulario, debes utilizar el valor de clickedSlotTime para establecer el valor inicial del campo appointmentTime en tu formulario de react-hook-form.
+
+Hay varias maneras de hacer esto, dependiendo de cómo esté estructurado tu formulario. Aquí te presento dos enfoques comunes:
+
+Enfoque 1: Utilizando defaultValues en useForm:
+
+TypeScript
+
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertAppointmentSchema } from "@shared/schema";
+
+// ... (dentro de tu componente, donde defines useForm)
+
+const { handleSubmit, reset, setValue, ...methods } = useForm<z.infer<typeof insertAppointmentSchema>>({
+  resolver: zodResolver(insertAppointmentSchema),
+  defaultValues: {
+    appointmentTime: clickedSlotTime || null, // Establece el valor inicial con clickedSlotTime
+    // ... otros valores por defecto del formulario
+  },
+});
+Importante: Si clickedSlotTime se actualiza después de que se inicializa el formulario, es posible que necesites un useEffect para actualizar el valor del campo.
+
+Enfoque 2: Utilizando useEffect para actualizar el valor del campo:
+
+TypeScript
+
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { insertAppointmentSchema } from "@shared/schema";
+import { useEffect } from "react";
+
+// ... (dentro de tu componente, donde defines useForm)
+
+const { handleSubmit, reset, setValue, ...methods } = useForm<z.infer<typeof insertAppointmentSchema>>({
+  resolver: zodResolver(insertAppointmentSchema),
+  defaultValues: {
+    appointmentTime: null, // Inicializa a null o un valor por defecto
+    // ... otros valores por defecto del formulario
+  },
+});
+
+useEffect(() => {
+  if (isDialogOpen && clickedSlotTime) {
+    setValue("appointmentTime", clickedSlotTime);
+  }
+}, [isDialogOpen, clickedSlotTime, setValue]);
+Este useEffect se ejecutará cada vez que isDialogOpen cambie a true (cuando se abre el formulario) y clickedSlotTime tenga un valor. Luego, utilizará la función setValue de react-hook-form para establecer el valor del campo appointmentTime.
+
+Asegúrate de que el formulario se abra después de capturar la información del slot: Verifica que la lógica para establecer isDialogOpen a true se ejecute después de que se haya actualizado clickedSlotTime en tu función handleSlotClick.
+
+Revisa cualquier otra lógica que pueda estar modificando el valor del campo appointmentTime: Busca en tu código si hay alguna otra función o useEffect que se ejecute al cargar el formulario y que pueda estar sobrescribiendo el valor del campo appointmentTime con la hora del primer slot disponible. Elimina o modifica esa lógica para que no interfiera con la hora del slot clickeado.
+
+En resumen, la clave está en:
+
+Capturar la fecha y hora del slot clickeado y almacenarla en un estado.
+Utilizar ese estado para inicializar el campo appointmentTime del formulario cuando se abre el Dialog.
+Busca en tu código las siguientes partes y verifica la lógica:
+
+La función que se ejecuta cuando se hace clic en un slot del calendario.
+La forma en que se controla la apertura del Dialog del formulario.
+La inicialización del formulario react-hook-form, especialmente la propiedad defaultValues y cualquier useEffect que pueda estar modificando los valores del formulario al abrirse.

@@ -1,0 +1,68 @@
+Ese error:
+
+vbnet
+Copy
+Edit
+Warning: Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously later calls tries to update the component. Move this work to useEffect instead.
+significa que estás intentando actualizar el state de un componente después de que se haya desmontado, lo cual es un patrón incorrecto en React.
+
+Qué suele causarlo
+Normalmente esto ocurre cuando:
+
+Llamás a una función async (como fetch o un setTimeout) en el render o dentro de un useEffect sin asegurarte de que el componente siga montado cuando la promesa se resuelva.
+
+O usás directamente efectos secundarios fuera de useEffect, como en el cuerpo del componente.
+
+Solución recomendada
+1. Usar useEffect para efectos secundarios
+Si estás haciendo algo como esto:
+
+tsx
+Copy
+Edit
+const AdminConfig = () => {
+  const [data, setData] = useState(null);
+
+  // ❌ Esto es incorrecto si está dentro del cuerpo del componente
+  fetch('/api/config')
+    .then(res => res.json())
+    .then(setData);
+
+  return <div>{data ? 'Loaded' : 'Loading...'}</div>;
+};
+Debés mover esa lógica a un useEffect y controlar si el componente sigue montado:
+
+tsx
+Copy
+Edit
+import { useEffect, useState } from 'react';
+
+const AdminConfig = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchData = async () => {
+      const res = await fetch('/api/config');
+      const json = await res.json();
+      if (isMounted) setData(json); // solo actualiza si sigue montado
+    };
+
+    fetchData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  return <div>{data ? 'Loaded' : 'Loading...'}</div>;
+};
+2. Verificar tu línea específica
+En tu error aparece:
+
+less
+Copy
+Edit
+at AdminConfig (https://.../src/pages/admin-config.tsx:34:37)
+Andá a esa línea (admin-config.tsx, línea 34) y revisá si estás haciendo una llamada async o actualizando el state directamente en el cuerpo del componente o sin useEffect.

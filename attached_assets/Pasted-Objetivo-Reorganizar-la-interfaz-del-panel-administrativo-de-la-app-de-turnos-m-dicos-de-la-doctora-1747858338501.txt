@@ -1,0 +1,75 @@
+Objetivo: Reorganizar la interfaz del panel administrativo de la app de turnos médicos de la doctora, y reestructurar las solapas de navegación para mejorar la experiencia de uso.
+
+✅ Tareas específicas:
+Rediseñar la solapa “Inicio” (ícono de la casita):
+
+Mostrar vista de calendario completa (semana/mes).
+
+Permitir bloquear días específicos con un toggle por día.
+
+Permitir agregar días eventuales con sus propios horarios.
+
+Mostrar lista de turnos próximos, ordenada por fecha y hora, incluyendo:
+
+Nombre del paciente
+
+Tipo de servicio
+
+Estado del turno (pendiente/pagado/cancelado)
+
+Agregar una nueva solapa llamada “Estadísticas”:
+
+Mostrar métricas como:
+
+Turnos por semana/mes
+
+Porcentaje de asistencia y cancelación
+
+Servicios más solicitados
+
+Ingresos estimados
+
+Incluir gráficos visuales si es posible (usar alguna librería como recharts, chart.js, etc.).
+
+Agregar una solapa “Pacientes”:
+
+Mostrar lista de pacientes con:
+
+Nombre completo, email, WhatsApp
+
+Obra social
+
+Historial de turnos
+
+Agregar opción de exportar la base a Excel o CSV (opcional).
+
+Reestructurar la solapa “Configuración” (ícono de ruedita):
+
+Secciones dentro de configuración:
+
+Días laborales regulares: permitir elegir días y horarios fijos.
+
+Días eventuales: permitir agregar días y horarios excepcionales.
+
+Vacaciones o días bloqueados: permitir bloquear días completos del calendario.
+
+Integración con Google Calendar: mantener sincronización unidireccional (de la app al calendario).
+
+Mensajes a pacientes: permitir configurar textos de:
+
+Confirmación de turno
+
+Recordatorio de turno
+
+Cancelación
+
+Mensaje con link de pago
+
+🧩 Recomendaciones técnicas:
+Usar estructura de rutas separadas si se está usando React Router.
+
+Separar cada sección en componentes reutilizables (UpcomingAppointments, CalendarView, StatsDashboard, PatientTable, ConfigPanel, etc).
+
+Mantener estilo visual consistente con tailwind o shadcn/ui.
+
+Usar zustand o context para estado global si es necesario.

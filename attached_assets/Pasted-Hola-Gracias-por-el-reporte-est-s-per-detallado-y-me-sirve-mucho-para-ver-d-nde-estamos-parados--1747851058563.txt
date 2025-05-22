@@ -1,0 +1,92 @@
+Hola! Gracias por el reporte, está súper detallado y me sirve mucho para ver dónde estamos parados.
+
+Me gustaría que avancemos con la resolución de estos problemas en este orden, priorizando las funcionalidades que impactan directamente en la experiencia del paciente y la doctora:
+
+✅ TAREAS PRIORITARIAS (en orden)
+1. 🛠️ Implementar correctamente los días eventuales con horarios específicos
+Objetivo: Permitir que la doctora agregue días laborales eventuales con franja horaria definida, que luego aparezcan como turnos disponibles.
+
+Instrucciones:
+
+Integrar el código útil del archivo admin.tsx.backup en el archivo activo de configuración de agenda.
+
+Activar y usar correctamente la columna occasional_work_day_times:
+
+Esta columna debería guardar un JSON con estructura como:
+
+json
+Copy
+Edit
+{
+  "2025-06-27": { "start": "15:00", "end": "19:00" }
+}
+Asegurarse de que:
+
+En el frontend se puedan agregar días eventuales con su franja horaria.
+
+En el backend se generen turnos en base a esos horarios.
+
+Verificar consistencia horaria (verificar toZonedTime en esta parte).
+
+2. 🔧 Corregir el render de los días bloqueados por la doctora
+Objetivo: Que la doctora pueda bloquear un día específico desde el calendario, y ese día no esté disponible para los pacientes.
+
+Instrucciones:
+
+Agregar una funcionalidad de toggle en el calendario del dashboard de la doctora.
+
+Al activarlo, se debe guardar la fecha como bloqueada en una nueva tabla o columna blocked_days.
+
+En el backend, excluir estos días al generar los días disponibles para pacientes.
+
+Asegurarse de que si un día está bloqueado, no se puedan cargar días eventuales sobre ese mismo día.
+
+3. 🔁 Revisión del manejo de zonas horarias
+Objetivo: Evitar errores por inconsistencias horarias (especialmente en días eventuales).
+
+Instrucciones:
+
+Estandarizar uso de toZonedTime o el enfoque elegido para convertir y mostrar horarios en la zona correcta.
+
+Verificar si la doctora y pacientes deben ver los turnos siempre en la misma zona horaria (probablemente America/Argentina/Buenos_Aires).
+
+4. 📬 Implementar integración con Mercado Pago
+Objetivo: Enviar un link de pago en el email de confirmación de turno al paciente.
+
+Instrucciones:
+
+Usar Checkout Preferences de Mercado Pago para generar links de pago.
+
+Crear un link único por turno con los datos del paciente, día/hora y precio.
+
+Incluir el botón “Pagar ahora con Mercado Pago” en el email de confirmación.
+
+Si el paciente ya pagó, actualizar el estado del turno a “Pagado”.
+
+5. ❌ Agregar botón para cancelar turno desde el email
+Objetivo: Que el paciente pueda cancelar el turno directamente desde el mail que recibe.
+
+Instrucciones:
+
+En el mail de confirmación, agregar un botón “Cancelar turno”.
+
+El botón debe llevar a un link único con token seguro que:
+
+Permita identificar el turno y marcarlo como cancelado.
+
+Muestre una página simple confirmando la cancelación.
+
+🧹 TAREAS ADICIONALES DE MANTENIMIENTO (baja prioridad pero importantes)
+Eliminar archivos duplicados (por ejemplo, los scripts de migración repetidos).
+
+Consolidar lógica de días eventuales en una sola función/módulo.
+
+Eliminar console.log innecesarios del entorno de producción.
+
+Importar correctamente las funciones/variables que están causando warnings.
+
+Evaluar si volvemos a habilitar la sincronización bidireccional con Google Calendar.
+
+¿Podés arrancar por la Tarea 1 (horarios para días eventuales)?
+Cuando eso esté resuelto y andando, seguimos con la siguiente. Si querés, te puedo ayudar a priorizar bugs menores o revisar visualmente algún módulo.
+

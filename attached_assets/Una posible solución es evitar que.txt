@@ -1,0 +1,75 @@
+Una posible solución es evitar que el useEffect que reinicializa el formulario se ejecute si el usuario ya seleccionó manualmente una hora (es decir, si selectedTime tiene un valor). Por ejemplo, en admin(2) el useEffect de reinicialización se ejecuta siempre que se abre el diálogo y si alguna de las condiciones no se cumple:
+
+  if (!selectedDate || !selectedTime || viewMode !== "calendar") { … }
+
+Esto provoca que, en caso de que selectedTime todavía sea nulo o no se haya actualizado al abrir el diálogo, se reinicialice el formulario con la hora por defecto (el primer slot disponible).
+
+Para evitarlo, se puede modificar esa condición para que el efecto se ejecute únicamente cuando selectedTime sea nulo. Por ejemplo:
+
+---------------------------------------------------
+useEffect(() => {
+  if (showNewAppointment) {
+    // Si ya hay una selección manual, no reinicializar el formulario
+    if (selectedDate && selectedTime && viewMode === "calendar") {
+      // No hacer nada para preservar la selección
+      return;
+    }
+    // Si no hay selección manual, inicializamos con la fecha actual o la seleccionada
+    const newDate = viewMode === "calendar" && selectedDate ? selectedDate : new Date();
+    let appointmentDateTime = new Date(newDate);
+
+    if (selectedTime && viewMode === "calendar") {
+      const [hoursPart, minutesPart] = selectedTime.split(":");
+      const hours = parseInt(hoursPart, 10);
+      const minutes = parseInt(minutesPart, 10);
+      if (!isNaN(hours) && !isNaN(minutes)) {
+        appointmentDateTime.setHours(hours, minutes, 0, 0);
+        console.log("Setting initial appointment time from selected time:", appointmentDateTime);
+      }
+    }
+
+    form.reset({
+      patientName: "",
+      email: "",
+      phone: "",
+      serviceType: "Consulta",
+      obraSocial: "Particular",
+      isFirstTime: false,
+      notes: "",
+      appointmentTime: appointmentDateTime,
+    });
+
+    form.setValue("appointmentTime", appointmentDateTime, {
+      shouldValidate: true,
+      shouldDirty: true,
+      shouldTouch: true,
+    });
+
+    // Si no estamos en vista calendario, reseteamos selectedDate y selectedTime
+    if (viewMode !== "calendar") {
+      setSelectedDate(null);
+      setSelectedTime(null);
+    }
+  }
+}, [showNewAppointment, form, viewMode, selectedDate, selectedTime]);
+---------------------------------------------------
+
+Con este cambio, si el usuario ya hizo clic en un slot y selectedTime tiene un valor (por ejemplo, "11:30"), entonces al abrir el diálogo no se reinicializará el formulario, preservando la selección manual.
+
+Otra opción es retrasar la apertura del diálogo para asegurarse de que React actualice el estado antes de ejecutar el efecto. Por ejemplo, en el onClick del botón de slot podrías hacer:
+
+---------------------------------------------------
+onClick={() => {
+  setSelectedDate(day);
+  setSelectedTime(formattedTime);
+  handleSlotSelect(formattedTime);
+  // Retrasar la apertura del diálogo hasta que los estados se actualicen
+  setTimeout(() => setShowNewAppointment(true), 0);
+}}
+---------------------------------------------------
+
+Esto le da a React el tiempo necesario para actualizar selectedTime antes de que se ejecute el useEffect que reinicializa el formulario.
+
+Comparando con admin(1) y admin(2) (véase citeturn3file0), en admin(2) se intentó evitar la auto-selección en el caso de edición, pero para la creación del turno el efecto seguía sobrescribiendo la selección manual. La solución anterior evita esa sobrescritura.
+
+¿Te parece si aplicamos alguna de estas soluciones? ¿Necesitás más detalles o ejemplos sobre cómo integrarlo en tu código actual?

@@ -1,0 +1,76 @@
+Comprobando: 2025-04-17 (jueves), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-18 (viernes), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-19 (sabado), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-20 (domingo), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-21 (lunes), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-22 (martes), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-23 (miercoles), incluido: true, workDays: miercoles
+admin.tsx:1746 Día 2025-04-23 (miercoles) es laborable
+admin.tsx:1742 Comprobando: 2025-04-24 (jueves), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-25 (viernes), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-26 (sabado), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-27 (domingo), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-28 (lunes), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-29 (martes), incluido: false, workDays: miercoles
+admin.tsx:1742 Comprobando: 2025-04-30 (miercoles), incluido: true, workDays: miercoles
+admin.tsx:1746 Día 2025-04-30 (miercoles) es laborable
+admin.tsx:1753 Total de días laborables en abril 2025: 5
+admin.tsx:1837 Días laborables calculados: 5
+admin.tsx:1674 Total de citas recibidas del servidor: 0
+admin.tsx:1774 Antes de ordenar y paginar - filteredAppointments: Array(0)
+admin.tsx:1777 viewMode actual: calendar
+admin.tsx:1778 Estado de los filtros: Object
+admin.tsx:1814 Después de ordenar y paginar - sortedAppointments: Array(0)
+admin.tsx:450 Citas recibidas del servidor: 0
+admin.tsx:451 ¿Está cargando? true
+admin.tsx:1674 Total de citas recibidas del servidor: 4
+admin.tsx:1676 Primera cita en la lista: Object
+admin.tsx:1774 Antes de ordenar y paginar - filteredAppointments: Array(4)
+admin.tsx:1777 viewMode actual: calendar
+admin.tsx:1778 Estado de los filtros: Object
+admin.tsx:1814 Después de ordenar y paginar - sortedAppointments: Array(4)
+admin.tsx:2544 Renderizando en modo: calendar
+admin.tsx:450 Citas recibidas del servidor: 4
+admin.tsx:451 ¿Está cargando? false
+admin.tsx:453 Primera cita: Object
+admin.tsx:459 Estado de datos: Object
+admin.tsx:470 Citas recibidas del servidor: 4 Array(4)
+admin.tsx:474 Estado del filtro de obra social: all
+admin.tsx:475 Estado del filtro de búsqueda: 
+admin.tsx:476 Estado del filtro de fechas: Object
+admin.tsx:500 Cita ID 1388: Object
+admin.tsx:500 Cita ID 1384: Object
+admin.tsx:500 Cita ID 1383: Object
+admin.tsx:500 Cita ID 1377: Object
+admin.tsx:512 Después de filtrar: 4 citas pasan los filtros.
+admin.tsx:1674 Total de citas recibidas del servidor: 4
+admin.tsx:1676 Primera cita en la lista: Object
+admin.tsx:1774 Antes de ordenar y paginar - filteredAppointments: Array(4)
+admin.tsx:1777 viewMode actual: list
+admin.tsx:1778 Estado de los filtros: ObjectdateFilter: {from: 'no establecido', to: 'no establecido'}obraSocialFilter: "all"searchQuery: ""[[Prototype]]: Object
+admin.tsx:1814 Después de ordenar y paginar - sortedAppointments: Array(4)
+admin.tsx:2544 Renderizando en modo: list
+admin.tsx:2549 Renderizando LA VISTA DE LISTA ahora
+admin.tsx:202 Modo de vista cambiado a: list
+admin.tsx:1819 Vista de Lista activada - Verificación completa:
+admin.tsx:1820 Citas totales: 4
+admin.tsx:1821 Citas filtradas: 4
+admin.tsx:1822 Citas mostradas después de ordenar y paginar: 4
+admin.tsx:1823 Detalles de las citas a mostrar: Array(4)0: {id: 1388, patientId: null, patientName: 'Yanacon Elvia ', email: 'yanaelvia@gmail.com', phone: '+54 9 11 5621-0114', …}1: {id: 1384, patientId: null, patientName: 'Aldana Ramirez', email: 'aldisofia27@gmail.com', phone: '+54 9 11 5458-4835', …}2: {id: 1383, patientId: null, patientName: 'Maria Rosa Rapisarda', email: 'mrrapisarda@fibertel.com.ar', phone: '+54 9 11 5120-6966', …}3: {id: 1377, patientId: null, patientName: 'Cecilia Baiardi', email: 'c.baiardi@hotmail.com', phone: '+5491135748933', …}length: 4[[Prototype]]: Array(0)
+admin.tsx:1824 Página actual: 0
+admin.tsx:1825 Citas por página: 5
+admin.tsx:1674 Total de citas recibidas del servidor: 4
+admin.tsx:1676 Primera cita en la lista: {id: 1388, patientId: null, patientName: 'Yanacon Elvia ', email: 'yanaelvia@gmail.com', phone: '+54 9 11 5621-0114', …}
+admin.tsx:1774 Antes de ordenar y paginar - filteredAppointments: (4) [{…}, {…}, {…}, {…}]
+admin.tsx:1777 viewMode actual: list
+admin.tsx:1778 Estado de los filtros: {searchQuery: '', obraSocialFilter: 'all', dateFilter: {…}}
+admin.tsx:1814 Después de ordenar y paginar - sortedAppointments: (4) [{…}, {…}, {…}, {…}]
+admin.tsx:2544 Renderizando en modo: list
+admin.tsx:2549 Renderizando LA VISTA DE LISTA ahora
+admin.tsx:1819 Vista de Lista activada - Verificación completa:
+admin.tsx:1820 Citas totales: 4
+admin.tsx:1821 Citas filtradas: 4
+admin.tsx:1822 Citas mostradas después de ordenar y paginar: 4
+admin.tsx:1823 Detalles de las citas a mostrar: (4) [{…}, {…}, {…}, {…}]
+admin.tsx:1824 Página actual: 0
+admin.tsx:1825 Citas por página: 5

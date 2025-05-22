@@ -1,0 +1,40 @@
+A lo que se debe prestar atención es que existe un efecto (useEffect) que se dispara cada vez que cambia la fecha seleccionada (selectedDate) y que, sin tener en cuenta si el usuario ya eligió manualmente un horario, automáticamente toma el primer slot disponible. Esto provoca que incluso si se hace clic en otro slot, la lógica posterior se sobrescribe con el primer slot obtenido de getAvailableTimeSlots, tal como se ve en este fragmento:
+
+"useEffect(() => {
+  if (selectedDate && selectedDate instanceof Date && !isNaN(selectedDate.getTime())) {
+    const availableSlots = getAvailableTimeSlots(selectedDate);
+    console.log("Available time slots for selected date:", availableSlots);
+    // Set the full date and time in the form when date is selected
+    if (availableSlots.length > 0) {
+      const firstAvailableSlot = availableSlots[0];
+      const formattedTime = `${firstAvailableSlot.hour}:${firstAvailableSlot.minute === 0 ? '00' : firstAvailableSlot.minute}`;
+      handleSlotSelect(formattedTime);
+    } else {
+      // Clear the time selection if no slots are available
+      setSelectedTime(null);
+    }
+  }
+}, [selectedDate, scheduleConfig]);"
+
+(se puede ver en citeturn1file9)
+
+Esto es el principal causante de que siempre se cargue el primer slot disponible, ya que al cambiar la fecha –o al establecerla tras hacer clic en un slot– se ejecuta este efecto y se fuerza la selección.
+
+Para solucionar el problema se recomienda:
+
+1. **Condicionar o eliminar la auto-selección:**  
+ – Si la intención es que el usuario elija explícitamente el slot, entonces no se debe auto-seleccionar ningún horario en el useEffect. Una solución es eliminar este bloque o bien agregar una condición para que solo se auto-seleccione si selectedTime aún no tiene un valor (por ejemplo, `if (selectedDate && scheduleConfig && !selectedTime) { … }`).
+
+2. **Revisar la actualización del formulario:**  
+ – Verifica que la función handleSlotSelect realmente esté actualizando el estado y el valor del formulario sin que luego otro efecto lo reescriba. En handleSlotSelect se llama a setSelectedTime y se hace form.setValue("appointmentTime", appointmentDateTime, …), lo cual es correcto.  
+ – Asegúrate de que al hacer clic en un slot (donde se llama a handleSlotSelect con el valor correspondiente) ese valor no se sobrescribe por el useEffect que auto-selecciona el primer slot.
+
+3. **Organizar los efectos:**  
+ – Revisa que no existan dos useEffect que trabajen con [selectedDate, scheduleConfig] y que uno de ellos fuerce la selección sin esperar la acción del usuario.  
+ – Una posible solución es separar la lógica de auto-selección para cuando se abre el formulario (por ejemplo, al crear un turno sin seleccionar slot previamente) y la lógica de actualización cuando el usuario selecciona manualmente.
+
+En resumen, la causa principal del problema es que el efecto que se dispara al cambiar selectedDate fuerza la selección del primer slot disponible, lo cual impide que la selección manual (al hacer clic en un slot del calendario) tenga efecto. Se debe condicionar ese comportamiento para que solo se auto-seleccione si el usuario no eligió nada previamente.
+
+¿Te gustaría ver un ejemplo concreto de cómo modificar ese useEffect para que solo se ejecute cuando selectedTime esté vacío, o necesitas profundizar en algún otro aspecto?  
+
+Esta respuesta se basa en fragmentos del código, por ejemplo, en citeturn1file9 y otros fragmentos relacionados con handleSlotSelect y la lógica de availableSlots.

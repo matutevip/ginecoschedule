@@ -1,0 +1,102 @@
+client:495 [vite] connecting...
+client:614 [vite] connected.
+chunk-RPCDYKBN.js?v=2e4e3f54:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+App.tsx:25 Detección de subdominio admin - Hostname: 12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev
+App.tsx:29 Hostname comienza con "admin.": NO
+App.tsx:34 Parámetro admin en URL: NO
+apiClient.ts:58 Error en solicitud API a /api/admin/appointments/today: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+apiClient @ apiClient.ts:58
+chunk-5WOY7GYE.js?v=2e4e3f54:336 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ chunk-5WOY7GYE.js?v=2e4e3f54:336
+chunk-5WOY7GYE.js?v=2e4e3f54:336 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ chunk-5WOY7GYE.js?v=2e4e3f54:336
+App.tsx:25 Detección de subdominio admin - Hostname: 12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev
+App.tsx:29 Hostname comienza con "admin.": NO
+App.tsx:34 Parámetro admin en URL: NO
+App.tsx:25 Detección de subdominio admin - Hostname: 12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev
+App.tsx:29 Hostname comienza con "admin.": NO
+App.tsx:34 Parámetro admin en URL: NO
+integrated-calendar-settings.tsx:448 Uncaught TypeError: Cannot read properties of undefined (reading 'occasionalWorkDays')
+    at IntegratedCalendarSettings (integrated-calendar-settings.tsx:448:33)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=2e4e3f54:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=2e4e3f54:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=2e4e3f54:15914:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=2e4e3f54:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=2e4e3f54:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=2e4e3f54:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=2e4e3f54:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=2e4e3f54:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=2e4e3f54:19137:13)
+integrated-calendar-settings.tsx:448 Uncaught TypeError: Cannot read properties of undefined (reading 'occasionalWorkDays')
+    at IntegratedCalendarSettings (integrated-calendar-settings.tsx:448:33)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=2e4e3f54:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=2e4e3f54:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=2e4e3f54:15914:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=2e4e3f54:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=2e4e3f54:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=2e4e3f54:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=2e4e3f54:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=2e4e3f54:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=2e4e3f54:19137:13)
+chunk-RPCDYKBN.js?v=2e4e3f54:14032 The above error occurred in the <IntegratedCalendarSettings> component:
+
+    at IntegratedCalendarSettings (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/components/admin/integrated-calendar-settings.tsx?t=1747860012627:46:3)
+    at div
+    at _c9 (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/components/ui/card.tsx:114:12)
+    at div
+    at _c (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/components/ui/card.tsx:20:11)
+    at div
+    at https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=2e4e3f54:41:13
+    at Presence (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LJ3RETOA.js?v=2e4e3f54:24:11)
+    at https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=2e4e3f54:448:13
+    at _c5 (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/components/ui/tabs.tsx:72:12)
+    at div
+    at https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=2e4e3f54:41:13
+    at Provider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-R2T6YHTW.js?v=2e4e3f54:43:15)
+    at https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=2e4e3f54:326:7
+    at div
+    at main
+    at div
+    at AdminLayout (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/components/admin/admin-layout.tsx:20:31)
+    at AdminConfig (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/pages/admin-config.tsx?t=1747860012627:34:37)
+    at Route (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=2e4e3f54:323:16)
+    at Switch (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=2e4e3f54:379:17)
+    at Router (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/App.tsx?t=1747860427922&v=ix1OmuqkLw9LDqmq4OwaC:50:35)
+    at Provider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-R2T6YHTW.js?v=2e4e3f54:43:15)
+    at TooltipProvider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=2e4e3f54:61:5)
+    at QueryClientProvider (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=2e4e3f54:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-RPCDYKBN.js?v=2e4e3f54:14032
+chunk-RPCDYKBN.js?v=2e4e3f54:9129 Uncaught TypeError: Cannot read properties of undefined (reading 'occasionalWorkDays')
+    at IntegratedCalendarSettings (integrated-calendar-settings.tsx:448:33)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=2e4e3f54:11548:26)
+    at mountIndeterminateComponent (chunk-RPCDYKBN.js?v=2e4e3f54:14926:21)
+    at beginWork (chunk-RPCDYKBN.js?v=2e4e3f54:15914:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=2e4e3f54:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=2e4e3f54:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=2e4e3f54:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=2e4e3f54:19116:15)
+    at recoverFromConcurrentError (chunk-RPCDYKBN.js?v=2e4e3f54:18736:28)
+    at performSyncWorkOnRoot (chunk-RPCDYKBN.js?v=2e4e3f54:18879:28)
+apiClient.ts:58 Error en solicitud API a /api/admin/google-calendar/status: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+apiClient @ apiClient.ts:58
+admin-config.tsx:44 Error al verificar estado de Google Calendar: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+checkGoogleCalendarStatus @ admin-config.tsx:44
+chunk-RPCDYKBN.js?v=2e4e3f54:521 Warning: Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously later calls tries to update the component. Move this work to useEffect instead.
+    at AdminConfig (https://12944b3e-b89d-4d86-a520-468f5b430404-00-374u3qhq55mzc.spock.replit.dev/src/pages/admin-config.tsx?t=1747860012627:34:37)
+printWarning @ chunk-RPCDYKBN.js?v=2e4e3f54:521
+apiClient.ts:58 Error en solicitud API a /api/admin/google-calendar/status: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+apiClient @ apiClient.ts:58
+admin-config.tsx:44 Error al verificar estado de Google Calendar: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+checkGoogleCalendarStatus @ admin-config.tsx:44
+apiClient.ts:58 Error en solicitud API a /api/admin/message-templates: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+apiClient @ apiClient.ts:58
+admin-config.tsx:55 Error al cargar plantillas de mensajes: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+loadMessageTemplates @ admin-config.tsx:55
+apiClient.ts:58 Error en solicitud API a /api/admin/message-templates: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+apiClient @ apiClient.ts:58
+admin-config.tsx:55 Error al cargar plantillas de mensajes: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+loadMessageTemplates @ admin-config.tsx:55

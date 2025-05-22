@@ -1,0 +1,24 @@
+Comparando admin(1) y admin(2), se pueden notar los siguientes cambios clave en la lógica de auto‐selección de la hora:
+
+• En admin(1), el useEffect que se ejecuta cuando cambia selectedDate calcula los availableSlots y, si hay alguno, siempre toma el primero (llamando a handleSlotSelect con ese valor). Esto provoca que incluso si el usuario hace clic en un slot concreto, el efecto sobreescribe la selección con el primer slot disponible.
+
+• En admin(2), se intentó “corregir” esto restringiendo la llamada a handleSlotSelect en ese useEffect para que se ejecute solo si se está editando un turno (es decir, si editingAppointment es verdadero). Es decir, en admin(2) el bloque ahora es:
+
+  if (editingAppointment) {     const appointmentTime = new Date(editingAppointment.appointmentTime);     const formattedTime = format(appointmentTime, 'HH:mm');     handleSlotSelect(formattedTime);   }
+
+En admin(2) se comenta “Remove automatic selection of first available slot / Let the user explicitly select a time slot” ​
+.
+
+Sin embargo, el problema persiste porque, al abrir el diálogo para crear un nuevo turno, existe otro useEffect (el de “Reset form when opening new appointment dialog”) que se ejecuta al detectar showNewAppointment. Ese efecto verifica la condición:   if (!selectedDate || !selectedTime || viewMode !== "calendar") y, si alguna de esas condiciones es cierta, reinicializa el formulario con una fecha nueva (generalmente new Date()), lo que puede derivar en que se asigne la hora por defecto (el primer slot disponible) en lugar de respetar la selección manual.
+
+En resumen, en admin(2):  – Se eliminó la auto-selección del primer slot en el useEffect de selectedDate cuando no se está editando, lo cual es un cambio respecto a admin(1).  – Pero el efecto que reinicializa el formulario al abrir el diálogo sigue evaluándose y, si por cuestiones de sincronización selectedTime todavía es nulo o no se ha actualizado a tiempo, se reinicia el formulario usando valores por defecto, asignando efectivamente el primer slot disponible.
+
+Para resolverlo se pueden considerar dos enfoques:
+
+Retrasar la apertura del diálogo hasta que los estados selectedDate y selectedTime se hayan actualizado correctamente (por ejemplo, usando un setTimeout de 0 milisegundos en el onClick del slot).
+
+Modificar el useEffect de reinicialización del formulario para que se ejecute únicamente si selectedTime es nulo. Por ejemplo:   if (showNewAppointment && !selectedTime) { … } de forma que, si el usuario ya seleccionó manualmente un slot (es decir, selectedTime tiene un valor), el efecto no reinicialice el formulario y no sobreescriba la selección.
+
+Estos cambios permitirían que, al hacer clic en un slot en el calendario, la selección manual no sea sobrescrita por la lógica de reinicialización del formulario.
+
+¿Te gustaría ver un ejemplo concreto de cómo implementar alguna de estas soluciones?

@@ -1,0 +1,101 @@
+[vite] connecting...
+[vite] connected.
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/pages/admin.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/pages/admin.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/pages/admin.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/quick-appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/quick-appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/admin/quick-appointment-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/pages/booking.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/pages/booking.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/pages/admin.tsx
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/components/admin/clinical-history.tsx
+[vite] hot updated: /src/components/admin/appointment-form.tsx
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+[vite] hot updated: /src/components/booking-form.tsx
+[vite] hot updated: /src/index.css?v=uc2iZ7GQo6mLnY_e1cYYw
+Calendar is not defined
+Calendar is not defined
+The above error occurred in the <Controller> component:
+
+    at Controller (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YABUFNLM.js?v=8606a715:313:35)
+    at FormField (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/ui/form.tsx:32:6)
+    at div
+    at form
+    at FormProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YABUFNLM.js?v=8606a715:102:11)
+    at div
+    at BookingForm (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/booking-form.tsx?t=1744213990650:136:23)
+    at div
+    at div
+    at Home (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/pages/home.tsx:24:25)
+    at Route (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8606a715:323:16)
+    at Switch (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8606a715:379:17)
+    at Router
+    at Provider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-MQDSU7FK.js?v=8606a715:38:15)
+    at TooltipProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=8606a715:59:5)
+    at QueryClientProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=8606a715:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+at Controller (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YABUFNLM.js?v=8606a715:313:35)
+at FormField (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/ui/form.tsx:32:6)
+at div
+at form
+at FormProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-YABUFNLM.js?v=8606a715:102:11)
+at div
+at BookingForm (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/booking-form.tsx?t=1744213990650:136:23)
+at div
+at div
+at Home (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/pages/home.tsx:24:25)
+at Route (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8606a715:323:16)
+at Switch (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8606a715:379:17)
+at Router
+at Provider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-MQDSU7FK.js?v=8606a715:38:15)
+at TooltipProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=8606a715:59:5)
+at QueryClientProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=8606a715:2805:3)
+at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+at t.value (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/_

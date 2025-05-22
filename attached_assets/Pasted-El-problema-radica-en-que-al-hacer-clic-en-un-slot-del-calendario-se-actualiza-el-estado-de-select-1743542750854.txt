@@ -1,0 +1,45 @@
+El problema radica en que, al hacer clic en un slot del calendario, se actualiza el estado de selectedTime y se llama a handleSlotSelect, pero luego se usa un setTimeout que comprueba el valor de selectedTime, el cual no se actualiza de forma inmediata debido a la naturaleza asíncrona de setState en React. Esto provoca que, cuando se abre el modal, se utilice (o se confíe) en el valor anterior (o el primer slot por defecto) en lugar del slot que se acaba de seleccionar.
+
+Para solucionarlo, se pueden considerar dos enfoques:
+
+Abrir el modal directamente sin esperar al setTimeout:
+Dado que ya tienes el valor del slot en la variable formattedTime, puedes llamar a setShowNewAppointment(true) inmediatamente después de actualizar selectedTime y selectedDate, sin depender del estado actualizado. Por ejemplo:
+
+tsx
+Copy
+Edit
+onClick={() => {
+  setSelectedDate(day);
+  setSelectedTime(formattedTime);
+  handleSlotSelect(formattedTime);
+  // Abrir el modal inmediatamente usando formattedTime en lugar de esperar selectedTime
+  setShowNewAppointment(true);
+}}
+Utilizar el valor local en lugar del estado en el callback:
+Si por alguna razón necesitas esperar un poco antes de abrir el modal, puedes usar el valor recién obtenido (formattedTime) en la verificación, en lugar de depender de selectedTime, que se actualiza de forma asíncrona:
+
+tsx
+Copy
+Edit
+onClick={() => {
+  setSelectedDate(day);
+  setSelectedTime(formattedTime);
+  handleSlotSelect(formattedTime);
+  setTimeout(() => {
+    // Usar formattedTime directamente en lugar de selectedTime
+    if (formattedTime) {
+      setShowNewAppointment(true);
+    }
+  }, 50);
+}}
+De esta forma, te aseguras de que el horario correcto seleccionado por el usuario se utilice al abrir el formulario de turno. Además, revisa si algún useEffect (como el que selecciona automáticamente el primer slot disponible cuando se actualiza selectedDate) no esté interfiriendo con la selección manual; podría ser útil condicionar esa lógica para que no se ejecute cuando el usuario ya haya seleccionado un horario.
+
+Esta corrección evita la dependencia del estado que aún no se ha actualizado y asegura que el formulario use el slot que el usuario acaba de seleccionar.
+
+
+
+
+
+
+
+

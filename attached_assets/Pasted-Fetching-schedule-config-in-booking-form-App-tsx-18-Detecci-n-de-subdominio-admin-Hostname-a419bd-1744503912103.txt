@@ -1,0 +1,112 @@
+Fetching schedule config in booking form
+App.tsx:18 Detección de subdominio admin - Hostname: a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev
+App.tsx:22 Hostname comienza con "admin.": NO
+App.tsx:27 Parámetro admin en URL: NO
+booking-form.tsx:127 Retrieved schedule config: Object
+admin.tsx:202 Modo de vista cambiado a: calendar
+admin.tsx:256 quickFormSlot cambió: null
+admin.tsx:450 Estado de datos: Object
+admin.tsx:1788 Días laborables calculados: 0
+App.tsx:18 Detección de subdominio admin - Hostname: a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev
+App.tsx:22 Hostname comienza con "admin.": NO
+App.tsx:27 Parámetro admin en URL: NO
+admin.tsx:450 Estado de datos: Object
+admin.tsx:2495 Renderizando en modo: calendar
+admin.tsx:450 Estado de datos: Object
+admin.tsx:461 Citas recibidas del servidor: 4 Array(4)
+admin.tsx:2495 Renderizando en modo: calendar
+chunk-RPCDYKBN.js?v=2f591376:521 Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
+    at button
+    at _c (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/ui/button.tsx:47:11)
+    at div
+    at button
+    at div
+    at div
+    at div
+    at div
+    at div
+    at div
+    at div
+    at div
+    at _c9 (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/ui/card.tsx:114:12)
+    at div
+    at _c (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/components/ui/card.tsx:20:11)
+    at div
+    at Admin (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/pages/admin.tsx?t=1744503747646:145:25)
+    at Route (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=2f591376:323:16)
+    at Switch (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=2f591376:379:17)
+    at Router (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/src/App.tsx?t=1744503747646&v=JkfBWYXrxm_RwNs0D1sNN:43:35)
+    at Provider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-MQDSU7FK.js?v=2f591376:38:15)
+    at TooltipProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=2f591376:59:5)
+    at QueryClientProvider (https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=2f591376:2805:3)
+    at App
+printWarning @ chunk-RPCDYKBN.js?v=2f591376:521Understand this error
+admin.tsx:1700 Configuración de días laborables: Array(2)
+admin.tsx:1710 Comprobando: 2025-04-01 (martes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-02 (miercoles), incluido: true, workDays: miercoles,miercoles
+admin.tsx:1714 Día 2025-04-02 (miercoles) es laborable
+admin.tsx:1710 Comprobando: 2025-04-03 (jueves), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-04 (viernes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-05 (sabado), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-06 (domingo), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-07 (lunes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-08 (martes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-09 (miercoles), incluido: true, workDays: miercoles,miercoles
+admin.tsx:1714 Día 2025-04-09 (miercoles) es laborable
+admin.tsx:1710 Comprobando: 2025-04-10 (jueves), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-11 (viernes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-12 (sabado), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-13 (domingo), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-14 (lunes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-15 (martes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-16 (miercoles), incluido: true, workDays: miercoles,miercoles
+admin.tsx:1714 Día 2025-04-16 (miercoles) es laborable
+admin.tsx:1710 Comprobando: 2025-04-17 (jueves), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-18 (viernes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-19 (sabado), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-20 (domingo), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-21 (lunes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-22 (martes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-23 (miercoles), incluido: true, workDays: miercoles,miercoles
+admin.tsx:1714 Día 2025-04-23 (miercoles) es laborable
+admin.tsx:1710 Comprobando: 2025-04-24 (jueves), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-25 (viernes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-26 (sabado), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-27 (domingo), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-28 (lunes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-29 (martes), incluido: false, workDays: miercoles,miercoles
+admin.tsx:1710 Comprobando: 2025-04-30 (miercoles), incluido: true, workDays: miercoles,miercoles
+admin.tsx:1714 Día 2025-04-30 (miercoles) es laborable
+admin.tsx:1721 Total de días laborables en abril 2025: 5
+admin.tsx:1788 Días laborables calculados: 5
+admin.tsx:2495 Renderizando en modo: calendar
+admin.tsx:465 Estado del filtro de obra social: all
+admin.tsx:466 Estado del filtro de búsqueda: 
+admin.tsx:467 Estado del filtro de fechas: Object
+admin.tsx:491 Cita ID 1388: Object
+admin.tsx:491 Cita ID 1384: Object
+admin.tsx:491 Cita ID 1383: Object
+admin.tsx:491 Cita ID 1377: Object
+admin.tsx:503 Después de filtrar: 4 citas pasan los filtros.
+admin.tsx:2495 Renderizando en modo: list
+admin.tsx:2500 Renderizando LA VISTA DE LISTA ahora
+admin.tsx:202 Modo de vista cambiado a: list
+admin.tsx:1770 Vista de Lista activada - Verificación completa:
+admin.tsx:1771 Citas totales: 4
+admin.tsx:1772 Citas filtradas: 4
+admin.tsx:1773 Citas mostradas después de ordenar y paginar: 4
+admin.tsx:1774 Detalles de las citas a mostrar: Array(4)
+admin.tsx:1775 Página actual: 0
+admin.tsx:1776 Citas por página: 5
+admin.tsx:2495 Renderizando en modo: calendar
+admin.tsx:202 Modo de vista cambiado a: calendar
+admin.tsx:2495 Renderizando en modo: list
+admin.tsx:2500 Renderizando LA VISTA DE LISTA ahora
+admin.tsx:202 Modo de vista cambiado a: list
+admin.tsx:1770 Vista de Lista activada - Verificación completa:
+admin.tsx:1771 Citas totales: 4
+admin.tsx:1772 Citas filtradas: 4
+admin.tsx:1773 Citas mostradas después de ordenar y paginar: 4
+admin.tsx:1774 Detalles de las citas a mostrar: (4) [{…}, {…}, {…}, {…}]
+admin.tsx:1775 Página actual: 0
+admin.tsx:1776 Citas por página: 5

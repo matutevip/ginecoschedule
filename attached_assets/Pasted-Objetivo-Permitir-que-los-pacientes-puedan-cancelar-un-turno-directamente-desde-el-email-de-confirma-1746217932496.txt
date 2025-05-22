@@ -1,0 +1,81 @@
+Objetivo
+Permitir que los pacientes puedan cancelar un turno directamente desde el email de confirmación, con un botón que:
+
+Usa un token seguro.
+
+Lleva a una página de confirmación de cancelación.
+
+Si el paciente acepta, cancela el turno y actualiza su estado.
+
+🛠️ Indicaciones técnicas para el agente
+1. 🔑 Generar token único de cancelación
+Al crear un turno nuevo en la base de datos, generar un token seguro y guardar en la tabla appointments:
+
+ts
+Copy
+Edit
+import { randomBytes } from "crypto";
+const cancellationToken = randomBytes(32).toString("hex");
+Guardar en la columna nueva cancellation_token (tipo TEXT o VARCHAR(64)).
+
+Agregar también una columna cancellation_token_expires_at (opcional, por ejemplo 48hs antes del turno).
+
+2. 📧 Modificar email de confirmación de turno
+Incluir un botón/link que apunte a una URL como:
+
+ruby
+Copy
+Edit
+https://cronosapp.com/cancelar-turno/:token
+Ejemplo:
+
+html
+Copy
+Edit
+<a href="https://cronosapp.com/cancelar-turno/ab12cd34ef56..." style="...">Cancelar turno</a>
+3. 🌐 Crear endpoint de frontend /cancelar-turno/:token
+Al entrar con el token, mostrar:
+
+Información del turno: fecha, hora, servicio.
+
+Pregunta: “¿Querés cancelar este turno?”
+
+Botones: ✅ Confirmar cancelación / ❌ Volver
+
+4. 📲 Validar y cancelar (en backend – Express)
+Crear el endpoint:
+
+ts
+Copy
+Edit
+POST /api/appointments/cancel-by-token
+Body: { token: string }
+Validaciones que debe hacer:
+
+Que el token exista y esté activo.
+
+Que no haya pasado la fecha del turno.
+
+Que el turno no esté ya cancelado.
+
+Opcional: que no haya expirado (si se usa cancellation_token_expires_at).
+
+Si es válido:
+
+Actualizar el status a cancelled_by_patient
+
+Registrar cancelled_at con now()
+
+Registrar cancelled_by = 'patient'
+
+Eliminar o invalidar el token (cancellation_token = NULL)
+
+5. ✉️ (Opcional) Enviar email de confirmación de cancelación
+“Tu turno fue cancelado correctamente. Si querés volver a reservar, hacelo desde…”
+
+🧪 Recomendaciones adicionales
+Usar HTTPS (nunca enviar tokens por HTTP).
+
+Limitar los tokens a 1 uso.
+
+Podés usar JWT si preferís firmar el token con expiración, pero con un token random en base de datos ya es seguro.

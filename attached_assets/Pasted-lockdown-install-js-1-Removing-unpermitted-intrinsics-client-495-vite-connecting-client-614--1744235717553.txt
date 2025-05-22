@@ -1,0 +1,111 @@
+lockdown-install.js:1 Removing unpermitted intrinsics
+client:495 [vite] connecting...
+client:614 [vite] connected.
+chunk-RPCDYKBN.js?v=8606a715:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+booking-form.tsx:117 Fetching schedule config in booking form
+booking-form.tsx:127 Retrieved schedule config: Object
+booking-form.tsx:241 Availability data: Object
+booking-form.tsx:241 Availability data: Object
+booking-form.tsx:374 Time slot selection: Object
+booking-form.tsx:241 Availability data: Object
+booking-form.tsx:241 Availability data: Object
+booking-form.tsx:241 Availability data: Object
+booking-form.tsx:241 Availability data: Object
+booking-form.tsx:241 Availability data: Objectdate: "2025-05-14"timeSlots: Array(6)0: {time: '09:00', available: false}1: {time: '09:30', available: false}2: {time: '10:00', available: false}3: {time: '10:30', available: false}4: {time: '11:00', available: false}5: {time: '11:30', available: false}length: 6[[Prototype]]: Array(0)[[Prototype]]: Object
+booking-form.tsx:241 Availability data: {date: '2025-06-04', timeSlots: Array(6)}
+booking-form.tsx:241 Availability data: {date: '2025-05-28', timeSlots: Array(6)}
+admin.tsx:224 quickFormSlot cambió: null
+admin.tsx:1628 Días laborables calculados: 0
+queryClient.ts:32 
+            
+            
+           GET https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/api/admin/check 401 (Unauthorized)
+(anonymous) @ queryClient.ts:32
+fetchFn @ @tanstack_react-query.js?v=8606a715:840
+run @ @tanstack_react-query.js?v=8606a715:494
+start @ @tanstack_react-query.js?v=8606a715:536
+fetch @ @tanstack_react-query.js?v=8606a715:926
+executeFetch_fn @ @tanstack_react-query.js?v=8606a715:2211
+onSubscribe @ @tanstack_react-query.js?v=8606a715:1898
+subscribe @ @tanstack_react-query.js?v=8606a715:24
+(anonymous) @ @tanstack_react-query.js?v=8606a715:3022
+subscribeToStore @ chunk-RPCDYKBN.js?v=8606a715:11984
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=8606a715:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=8606a715:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=8606a715:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=8606a715:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=8606a715:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=8606a715:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=8606a715:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=8606a715:19416
+commitRoot @ chunk-RPCDYKBN.js?v=8606a715:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=8606a715:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=8606a715:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=8606a715:18627
+queryClient.ts:15 
+            
+            
+           GET https://a419bd5d-ffc7-4853-a298-a2d84973a6e5-00-1q3kbxckpp56y.riker.replit.dev/api/admin/check 401 (Unauthorized)
+apiRequest @ queryClient.ts:15
+queryFn @ admin-login.tsx:38
+fetchFn @ @tanstack_react-query.js?v=8606a715:840
+run @ @tanstack_react-query.js?v=8606a715:494
+start @ @tanstack_react-query.js?v=8606a715:536
+fetch @ @tanstack_react-query.js?v=8606a715:926
+executeFetch_fn @ @tanstack_react-query.js?v=8606a715:2211
+onSubscribe @ @tanstack_react-query.js?v=8606a715:1898
+subscribe @ @tanstack_react-query.js?v=8606a715:24
+(anonymous) @ @tanstack_react-query.js?v=8606a715:3022
+subscribeToStore @ chunk-RPCDYKBN.js?v=8606a715:11984
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=8606a715:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=8606a715:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=8606a715:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=8606a715:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=8606a715:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=8606a715:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=8606a715:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=8606a715:19416
+commitRoot @ chunk-RPCDYKBN.js?v=8606a715:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=8606a715:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=8606a715:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=8606a715:18627
+setTimeout
+scheduleFn @ @tanstack_react-query.js?v=8606a715:555
+flush @ @tanstack_react-query.js?v=8606a715:569
+batch @ @tanstack_react-query.js?v=8606a715:587
+dispatch_fn @ @tanstack_react-query.js?v=8606a715:996
+onError @ @tanstack_react-query.js?v=8606a715:861
+reject @ @tanstack_react-query.js?v=8606a715:465
+(anonymous) @ @tanstack_react-query.js?v=8606a715:508
+Promise.catch
+run @ @tanstack_react-query.js?v=8606a715:498
+start @ @tanstack_react-query.js?v=8606a715:536
+fetch @ @tanstack_react-query.js?v=8606a715:926
+executeFetch_fn @ @tanstack_react-query.js?v=8606a715:2211
+onSubscribe @ @tanstack_react-query.js?v=8606a715:1898
+subscribe @ @tanstack_react-query.js?v=8606a715:24
+(anonymous) @ @tanstack_react-query.js?v=8606a715:3022
+subscribeToStore @ chunk-RPCDYKBN.js?v=8606a715:11984
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=8606a715:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=8606a715:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=8606a715:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=8606a715:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=8606a715:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=8606a715:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=8606a715:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=8606a715:19416
+commitRoot @ chunk-RPCDYKBN.js?v=8606a715:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=8606a715:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=8606a715:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=8606a715:18627
+/admin/login:1 [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) <input data-replit-metadata=​"client/​src/​pages/​admin-login.tsx:​138:​24" data-component-name=​"Input" type=​"password" class=​"flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:​border-0 file:​bg-transparent file:​text-sm file:​font-medium file:​text-foreground placeholder:​text-muted-foreground focus-visible:​outline-none focus-visible:​ring-2 focus-visible:​ring-offset-2 disabled:​cursor-not-allowed disabled:​opacity-50 border-primary/​20 focus-visible:​ring-primary pr-10" placeholder=​"Ingrese su contraseña" name=​"password" value>​flex
+admin.tsx:224 quickFormSlot cambió: null
+admin.tsx:1628 Días laborables calculados: 0
+admin.tsx:1560 Configuración de días laborables: (2) ['miercoles', 'miercoles']
+admin.tsx:1576 Total de días laborables en abril 2025: 0
+admin.tsx:1628 Días laborables calculados: 0
+admin.tsx:1630 Días laborables configurados: (2) ['miercoles', 'miercoles']
+admin.tsx:1631 Mes actual: abril 2025
+admin.tsx:601 Iniciando sincronización manual con Google Calendar
+admin.tsx:609 Respuesta de sincronización: {success: true, updated: 0, errors: 0, message: 'Sincronización exitosa. Se actualizaron 0 citas.'}
+admin.tsx:613 Sincronización exitosa: {success: true, updated: 0, errors: 0, message: 'Sincronización exitosa. Se actualizaron 0 citas.'}

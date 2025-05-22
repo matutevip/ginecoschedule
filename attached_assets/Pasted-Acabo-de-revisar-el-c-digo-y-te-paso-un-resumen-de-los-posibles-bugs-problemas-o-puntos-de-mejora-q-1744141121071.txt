@@ -1,0 +1,163 @@
+Acabo de revisar el código y te paso un resumen de los posibles bugs, problemas o puntos de mejora que encontré:
+
+🐞 Posibles bugs o comportamientos inesperados
+Seteo del horario en formulario (appointmentTime)
+
+En varios lugares se hace setTimeout para asegurar que el valor se setea correctamente en el formulario. Esto indica que hay una condición de carrera, y puede causar bugs intermitentes si el valor no se setea correctamente.
+
+⚠️ Sugerencia: consolidar lógica de seteo en un solo lugar y evitar el uso de setTimeout múltiples veces para lo mismo.
+
+Uso de form.getValues("appointmentTime") sin validar tipo
+
+Aunque se usa instanceof Date, si el valor es un string ISO (como puede pasar al hacer .reset()), puede fallar la validación posterior.
+
+⚠️ Mejor usar siempre new Date(value) y verificar con isNaN(date.getTime()) para garantizar que sea una fecha válida.
+
+Chequeo de disponibilidad (isTimeSlotAvailable)
+
+Usa aptTime.getHours() y aptTime.getMinutes() para comparar, pero no considera segundos ni milisegundos. Esto está bien, pero si algún turno se guarda con segundos distintos de 0, puede fallar la comparación.
+
+✅ Podés asegurarte de normalizar aptTime con .setSeconds(0, 0) antes de comparar.
+
+Edición de turnos: no se verifica si editingAppointment sigue siendo válido
+
+Si el turno ya fue eliminado del backend, form.reset() podría setear un estado inconsistente. Se podría agregar una verificación previa antes de llenar el form.
+
+⚙️ Mejoras y recomendaciones generales
+Desacoplar lógica de fechas y slots
+
+Hay una gran cantidad de lógica duplicada entre los distintos modos (calendar, list, etc.) para setear appointmentTime, lo que complica el mantenimiento.
+
+✨ Podrías crear una función utilitaria tipo:
+
+ts
+Copy
+Edit
+function buildDateWithTime(baseDate: Date, timeStr: string): Date { ... }
+Función handleSlotSelect hace demasiado
+
+Setea estado, form, referencias y decide si abrir modal. Es propensa a errores por side effects.
+
+✂️ Podrías separarla en:
+
+selectSlot(slot)
+
+openAppointmentDialog(slot)
+
+fillForm(slot)
+
+Paginar con appointmentsPage sin useMemo puede recalcular demás
+
+Aunque no es grave, si tenés muchos datos podrías usar useMemo para evitar recalcular sortedAppointments.
+
+availableDates puede incluir días sin horarios válidos
+
+Lo seteás basado en días laborables, pero no verificás si tienen al menos un horario disponible (por citas ocupadas).
+
+🔍 Si querés que refleje sólo días con disponibilidad real, podés filtrarlos con getAvailableTimeSlots(day).length > 0.
+
+✅ En resumen
+Tu código está muy bien estructurado y completo. Las sugerencias son más para evitar bugs sutiles en el futuro o mejorar el mantenimiento. Si querés, te puedo ayudar a refactorizar alguna de las partes críticas como la lógica de appointmentTime o los slots disponibles.
+
+¿Querés que prepare una refactor sugerida para algún fragmento?
+
+
+
+
+
+
+
+You said:
+si por favor refactoriza appointmentTime y los slots
+
+
+ChatGPT said:
+¡Perfecto, Mati! Vamos a refactorizar dos partes clave:
+
+🔧 Objetivo
+Consolidar la lógica de generación de appointmentTime (fecha + hora).
+
+Simplificar y centralizar el manejo de slots disponibles.
+
+✅ 1. Función utilitaria para construir appointmentTime
+Creamos una función única para armar correctamente la fecha + hora sin repetir lógica ni setTimeouts.
+
+ts
+Copy
+Edit
+function buildAppointmentDate(date: Date, time: string): Date {
+  const [hoursStr, minutesStr] = time.split(":");
+  const hours = parseInt(hoursStr, 10);
+  const minutes = parseInt(minutesStr, 10);
+  
+  const newDate = new Date(date);
+  newDate.setHours(hours, minutes, 0, 0);
+  return newDate;
+}
+📌 Usá esta función en lugar de repetir setHours() y .split(":") por todos lados.
+
+✅ 2. Validación centralizada de disponibilidad
+ts
+Copy
+Edit
+function isSlotAvailable(date: Date, time: string, appointments: Appointment[], editingId?: number): boolean {
+  const appointmentDateTime = buildAppointmentDate(date, time);
+
+  return !appointments.some((apt) => {
+    if (editingId && apt.id === editingId) return false;
+    
+    const aptDate = new Date(apt.appointmentTime);
+    return (
+      isSameDay(aptDate, appointmentDateTime) &&
+      aptDate.getHours() === appointmentDateTime.getHours() &&
+      aptDate.getMinutes() === appointmentDateTime.getMinutes()
+    );
+  });
+}
+✅ 3. Generador de slots disponibles para un día
+ts
+Copy
+Edit
+function getAvailableTimeSlotsForDate(
+  date: Date, 
+  scheduleConfig: ScheduleConfig, 
+  appointments: Appointment[], 
+  editingId?: number
+): string[] {
+  const [startHour, startMinute = 0] = scheduleConfig.startTime.split(":").map(Number);
+  const [endHour, endMinute = 0] = scheduleConfig.endTime.split(":").map(Number);
+
+  const startTotal = startHour * 60 + startMinute;
+  const endTotal = endHour * 60 + endMinute;
+
+  const availableSlots: string[] = [];
+
+  for (let minutes = startTotal; minutes < endTotal; minutes += 30) {
+    const hour = Math.floor(minutes / 60);
+    const minute = minutes % 60;
+    const slotStr = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
+
+    if (isSlotAvailable(date, slotStr, appointments, editingId)) {
+      availableSlots.push(slotStr);
+    }
+  }
+
+  return availableSlots;
+}
+✅ 4. En el componente: reemplazo de lógica duplicada
+Por ejemplo, en lugar de:
+
+ts
+Copy
+Edit
+const [hours, minutes] = selectedTime.split(":").map(Number);
+const date = new Date(selectedDate);
+date.setHours(hours, minutes);
+form.setValue("appointmentTime", date);
+→ ahora simplemente hacés:
+
+ts
+Copy
+Edit
+const appointmentDate = buildAppointmentDate(selectedDate, selectedTime);
+form.setValue("appointmentTime", appointmentDate);
