@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-[#fff7f2] text-foreground;
+  }
+}
+
+@layer components {
+  .highlight {
+    @apply font-bold text-white bg-[#b39ddb] px-1 rounded;
+  }
+
+  .highlight-changed {
+    @apply font-bold text-white bg-[#ffa726] px-1 rounded animate-pulse;
+  }
+
+  .bento-grid {
+    @apply grid grid-cols-3 gap-4;
+    width: min(98vw, 1600px);
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .paso1 {
+    @apply bg-[#b39ddb] p-6 rounded-lg;
+    grid-column: 1;
+    grid-row: span 2;
+    width: auto;
+    min-height: 400px;
+    font-family: Outfit;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .paso1 h2 {
+    font-size: 35px;
+  }
+
+  .paso2 {
+    @apply bg-[#d993a6] p-6 rounded-lg;
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 250px;
+    border: 1px solid #fadadd;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .paso3 {
+    @apply bg-[#e6d6ff] p-6 rounded-lg;
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 250px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .paso4 {
+    @apply bg-[#9a7fb5] p-6 rounded-lg;
+    grid-column: 3;
+    grid-row: span 2;
+    min-height: 400px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .paso4 h2 {
+    font-size: 35px;
+  }
+
+  .paso4 p {
+    @apply text-white;
+  }
+
+  .paso5-overlay {
+    @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+  }
+
+  .paso5-content {
+    @apply bg-[#f4c2c2] p-8 rounded-lg max-w-2xl w-full mx-4;
+    animation: slideIn 0.5s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .focus {
+    @apply ring-2 ring-black shadow-lg;
+    transform: scale(1.02);
+  }
+
+  .hidden {
+    @apply opacity-0 pointer-events-none absolute;
+  }
+
+  .mensaje {
+    @apply bg-[#9a7fb5] text-white font-bold rounded-md px-4 py-2;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mensaje:hover {
+    @apply bg-[#b39ddb];
+  }
+
+  .edit-button {
+    @apply bg-white text-[#9a7fb5] hover:bg-[#9a7fb5] hover:text-white border-2 border-[#9a7fb5] font-bold transition-colors duration-300 ease-in-out;
+  }
+
+  .formulario-paciente {
+    @apply space-y-4;
+  }
+
+  input, select, textarea {
+    @apply mb-4 w-full rounded-md p-2;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bento-grid {
+    @apply grid-cols-1;
+    padding: 1rem;
+  }
+
+  .paso1, .paso2, .paso3, .paso4 {
+    grid-column: 1;
+    width: 100%;
+  }
+  
+  /* Reorganizar orden de elementos en pantallas pequeñas */
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 1. Selección de hora primero */
+  .paso1 {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+  
+  /* 2. Datos del paciente después */
+  .paso2 {
+    order: 2;
+    margin-bottom: 1rem;
+  }
+  
+  /* 3. Tipo de consulta */
+  .paso3 {
+    order: 3;
+    margin-bottom: 1rem;
+  }
+  
+  /* 4. Confirmación al final */
+  .paso4 {
+    order: 4;
+  }
+}
+
+/* Tablet responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bento-grid {
+    @apply grid-cols-2;
+  }
+
+  .paso4 {
+    grid-column: 1 / span 2;
+  }
+}
